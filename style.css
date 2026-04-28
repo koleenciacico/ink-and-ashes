@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: "VT323", monospace;
+  font-weight: 500;
+  font-style: normal;
+}
+
+body {
+  background-image: url("assets/light-mode.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  /* Vertically + horizontally center everything */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Window Paper */
+.typewriter {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  filter: drop-shadow(0 6px 20px rgba(255, 255, 150, 0.58));
+}
+
+.window-bar {
+  background-color: #6b5fa6;
+  border: 4px solid #4a3f7a;
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.window-title {
+  font-size: 15px;
+  color: #e8e0ff;
+  letter-spacing: 1px;
+}
+
+.window-controls {
+  display: flex;
+  gap: 8px;
+}
+.ctrl-btn {
+  all: unset;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  font-size: 12px;
+  color: #fff;
+  background: #473a81;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.1s;
+}
+
+.ctrl-btn:hover {
+  background: #251f49;
+}
+.ctrl-btn.close:hover {
+  background: #a92e2a;
+}
+
+.paper-form {
+  /* CSS fallback replacing the missing form_base.png */
+  background-color: #fdf6e3;
+  border: 4px solid #4a3f7a;
+  border-bottom: none;
+  padding: 30px 40px 24px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.paper-form p {
+  font-size: 20px;
+  color: #3a3040;
+  margin-bottom: 14px;
+}
+
+/* Dashed separator line */
+.paper-form::after {
+  content: "";
+  display: block;
+  border-top: 2px dashed #e8b4b8;
+  margin: 0 -30px; /* bleed to edges */
+  position: relative;
+  top: -6px;
+  order: 1; /* sits between greeting and textarea */
+}
+
+/*textarea*/
+
+.letter-body {
+  font-family: "VT323", monospace;
+  font-size: 18px;
+  color: #3a3040;
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+  width: 100%;
+  flex: 1;
+  min-height: 280px;
+  line-height: 2;
+  padding-top: 20px;
+  order: 2;
+  caret-color: #6b5fa6;
+
+  /* ✅ Fix 1: caret and text start top-left, not center */
+  vertical-align: top;
+  text-align: left;
+  align-self: flex-start;
+
+  display: block;
+  opacity: 1;
+}
+
+.letter-body::placeholder {
+  color: #a49c8f;
+}
+
+/* ── Buttons bar ── */
+.form-buttons {
+  display: flex;
+  gap: 16px;
+  padding: 14px 16px;
+  background-color: #6b5fa6;
+  border: 4px solid #4a3f7a;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+}
+
+.btn {
+  all: unset;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.btn:hover {
+  transform: scale(1.06);
+}
+.btn:active {
+  transform: scale(0.96);
+}
+
+.form-buttons img {
+  width: 90px;
+  height: auto;
+  display: block;
+}
+
+/*footer8*/
+
+footer {
+  display: flex;
+  background-color: #9b8ec7;
+  padding: 12px 20px;
+  border-radius: 10px;
+  width: 700px;
+  margin-top: 24px;
+}
+
+footer p {
+  color: #fff;
+  font-size: 18px;
+  line-height: 2.2;
+}
