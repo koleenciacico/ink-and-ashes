@@ -10,42 +10,55 @@
     <title>Ink-and-Ashes</title>
 </head>
 <body>
-    <div class="typewriter">
 
-        <div class="window-bar">
-            <span class="window-title"> I SEE YOU</span>
-            <div class="window-controls">
-                <button class="ctrl-btn minimize">─</button>
-                <button class="ctrl-btn close">✕</button>
+<div class="app">
+     <nav class="sidebar">
+            <button class="write"><img src="assets/nav/typewriter-icon.png" alt="WRITE"><p>WRITE</p></button>
+            <button class="envelopes"><img src="assets/nav/env-icon.png" alt="ENVELOPES"><p>ENVELOPES</p></button>
+            <button class="settings"><p>SETTINGS</p></button>
+    </nav>
+    
+    <div class="main-content">
+        
+        <div class="typewriter">
+            <div class="window-bar">
+                <span class="window-title"> I SEE YOU</span>
+                <div class="window-controls">
+                    <button class="ctrl-btn minimize">─</button>
+                    <button class="ctrl-btn close">✕</button>
+                </div>
+            </div>
+
+            <!-- Paper form -->
+            <div class="paper-form">
+                <label for="writer">Dear  <input id="recipient" placeholder="Self," spellcheck="false"></label>
+            
+                <textarea
+                    class="letter-body"
+                    placeholder="Write your thoughts here..."
+                    spellcheck="false"></textarea>
+            </div>
+
+            <!--Buttons-->
+            <div class="form-buttons">
+                <button class="btn btn-keep">
+                    <img src="assets/buttons/keep-btn.gif"alt="KEEP">
+                </button>
+                <button class="btn btn-burn">
+                    <img src="assets/buttons/burn-icon.gif" alt="BURN">
+                </button>
             </div>
         </div>
 
-        <!-- Paper form -->
-        <div class="paper-form">
-            <label for="writer">Dear  <input id="recipient" placeholder="Self,"></label>
-           
-            <textarea
-                class="letter-body"
-                placeholder="Write your thoughts here..."
-                spellcheck="false"></textarea>
-        </div>
-
-        <!--Buttons-->
-        <div class="form-buttons">
-            <button class="btn btn-keep">
-                <img src="assets/buttons/keep-btn.gif"alt="KEEP">
-            </button>
-            <button class="btn btn-burn">
-                <img src="assets/buttons/burn-icon.gif" alt="BURN">
-            </button>
-        </div>
-
+            <footer>
+                <p style="flex:1"> 💜 Notes that stays</p>
+                <p style="flex:1">WRITE, KEEP, OR BURN.</p>
+                <p> 🧚🏽‍♀️ 0.0.1 v</p>
+            </footer>
+        
     </div>
+</div>
     
-    <footer>
-        <p style="flex:1"> 💜 Notes that stays</p>
-        <p style="flex:1">WRITE, KEEP, OR BURN.</p>
-        <p> 🧚🏽‍♀️ 0.0.1 v</p>
-    </footer>
+   
 </body>
 </html>
