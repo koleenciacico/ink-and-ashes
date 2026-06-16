@@ -34,7 +34,7 @@ body {
   background-size: cover;
 
   /* Vertically + horizontally center everything */
-  display: flex;
+  display: flex;P
   flex-direction: column;
   align-items: center;
   justify-content: center;
