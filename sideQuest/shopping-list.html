@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping list example</title>
+    <style>
+      li {
+        margin-bottom: 10px;
+      }
+
+      li button {
+        font-size: 12px;
+        margin-left: 20px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>My shopping list</h1>
+
+    <form>
+      <label for="item">Enter a new item:</label>
+      <input type="text" name="item" id="item">
+      <button>Add item</button>
+    </form>
+
+    <ul>
+
+    </ul>
+
+    <script>
+      // DOM references
+        const ul = document.querySelector("ul");
+        const text = document.querySelector("#item");
+        const btn = document.querySelector("button");
+
+        //Add a new item to the shopping list
+      function addItem (e){
+          e.preventDefault(); // Prevent form submission
+          const items = text.value ;
+          if (items === "") return; // Ignore empty input
+          text.value = "";
+          
+         // Create list item elements
+         const newList = document.createElement("li"); 
+         const span = document.createElement("span");
+         const btnDelete = document.createElement("button");
+
+         newList.append(span, btnDelete); // Add the item text and delete button to the list item
+         span.textContent = items;
+         btnDelete.textContent = "Delete";
+
+         ul.appendChild(newList); // Add the completed list item to the shopping list
+
+         // Remove item when deleted
+        btnDelete.addEventListener("click", () => {
+          newList.remove();
+      });
+       
+      text.focus();
+    }
+
+        btn.addEventListener("click", addItem);
+
+    </script>
+  </body>
+</html>
