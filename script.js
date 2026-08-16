@@ -15,3 +15,5 @@ function burnLetter() {
 
 btnKeep.addEventListener("click", getInfoForm);
 btnBurn.addEventListener("click", burnLetter);
+
+const 
