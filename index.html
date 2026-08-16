@@ -13,13 +13,13 @@
 
 <div class="app">
      <nav class="sidebar">
-            <button class="write"><img src="assets/nav/typewriter-icon.png" alt="WRITE"><p>WRITE</p></button>
+            <button class="write active"><img src="assets/nav/typewriter-icon.png" alt="WRITE"><p>WRITE</p></button>
             <button class="envelopes"><img src="assets/nav/env-icon.png" alt="ENVELOPES"><p>ENVELOPES</p></button>
-            <button class="settings"><p>SETTINGS</p></button>
     </nav>
-    
+
     <div class="main-content">
-        
+
+        <!-- Write / Read view -->
         <div class="typewriter">
             <div class="window-bar">
                 <span class="window-title"> I SEE YOU</span>
@@ -31,23 +31,35 @@
 
             <!-- Paper form -->
             <div class="paper-form">
-                <label for="writer">Dear  <input id="recipient" placeholder="Self," spellcheck="false"></label>
-            
+                <label for="recipient">Dear  <input id="recipient" placeholder="Self," spellcheck="false"></label>
+
                 <textarea
                     class="letter-body"
                     placeholder="Write your thoughts here..."
                     spellcheck="false"></textarea>
             </div>
 
-            <!--Buttons-->
+            <!--Buttons (editable mode)-->
             <div class="form-buttons">
                 <button class="btn btn-keep">
-                    <img src="assets/buttons/keep-btn.gif"alt="KEEP">
+                    <img src="assets/buttons/keep-btn.gif" alt="KEEP">
                 </button>
                 <button class="btn btn-burn">
                     <img src="assets/buttons/burn-icon.gif" alt="BURN">
                 </button>
             </div>
+
+            <!--Footer (read-only mode) -->
+            <div class="form-footer">
+                <button class="btn-new-letter">+ New Letter</button>
+                <span class="letter-date"></span>
+            </div>
+        </div>
+
+        <!-- Envelopes view -->
+        <div class="envelopes-view hidden">
+            <h2>Your Envelopes</h2>
+            <div class="envelope-list"></div>
         </div>
 
             <footer>
@@ -55,10 +67,40 @@
                 <p style="flex:1">It's ok not to be ok </p>
                 <p> ʚɞ 0.0.1 v</p>
             </footer>
-        
+
     </div>
 </div>
-    
-   <script src ="script.js"> </script>
+
+<!-- Keep confirmation modal -->
+<div class="modal-overlay hidden">
+    <div class="modal-box">
+        <p class="modal-title">Seal this letter?</p>
+        <p class="modal-text">Once kept, it can't be edited or rewritten. You'll be able to burn it later, but not change what it says.</p>
+        <div class="modal-actions">
+            <button class="modal-btn modal-cancel">Go back</button>
+            <button class="modal-btn modal-confirm">Keep it</button>
+        </div>
+    </div>
+</div>
+
+<!-- Burn confirmation modal -->
+<div class="modal-overlay burn-overlay hidden">
+    <div class="modal-box burn-box">
+        <p class="modal-title">Burn this letter?</p>
+        <p class="modal-text">This will destroy it completely. There's no getting it back.</p>
+        <div class="modal-actions">
+            <button class="modal-btn modal-cancel burn-cancel">Go back</button>
+            <button class="modal-btn modal-confirm burn-confirm">Burn it</button>
+        </div>
+    </div>
+</div>
+
+<!-- Burned toast -->
+<div class="toast burn-toast hidden">
+    <span class="toast-icon">🔥</span>
+    <span class="toast-text">Your letter has turned to ash.</span>
+</div>
+
+   <script src="script.js"></script>
 </body>
 </html>
